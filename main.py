@@ -1,7 +1,12 @@
 from selenium import webdriver
 import time
 
-driver = webdriver.Firefox()
-driver.get('https://www.avito.ru/')
-time.sleep(5)
-driver.quit()
+
+def test_authorization():
+    driver = webdriver.Firefox()
+    driver.get('https://www.avito.ru/')
+    driver.implicitly_wait(1)
+    driver.find_element('xpath', "/html/body/div[1]/div/div[3]/div/div/div/a").click()
+    find_enter.click()
+
+    driver.quit()
