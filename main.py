@@ -1,12 +1,19 @@
-from selenium import webdriver
 import time
+import math
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+
+from moduls import *
+from data import *
 
 
-def test_authorization():
-    driver = webdriver.Firefox()
-    driver.get('https://www.avito.ru/')
-    driver.implicitly_wait(1)
-    driver.find_element('xpath', "/html/body/div[1]/div/div[3]/div/div/div/a").click()
-    find_enter.click()
+def test_scenario():
+    connect(url)  # connect to the site
+    authorisation(test_login, test_password)  # authorization
+    click_('выбрать каталог')
+    click_('выбрать диалог')
+    write_in('поле ввода', 'какой штраф будет за выброшенный окурок в водоохранной зоне?')
+    driver.implicitly_wait(10)
 
     driver.quit()
