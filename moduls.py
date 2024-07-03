@@ -20,14 +20,14 @@ def write_in(where_change, send_keys):
     driver.implicitly_wait(10)
 
 
-def check_success(what_search):
-    click_('тут будет путь к кнопке, где ответ системы')
-    element = driver.find_element(By.XPATH, '/html/body/section[2]/div[1]/div/div[2]/div[1]/div[2]/div['
-                                            '2]/table/tbody/tr[1]')
+def check_success(what_search, where_search):
+    element = driver.find_element(By.XPATH, where_search)
     info = element.text
     return what_search in info
 
 
 def authorisation(login, password):
-    write_in('//*[@id="email"]', login)  # Пользователь
-    write_in('//*[@id="current-password"]', password)  # Пароль
+    write_in("путь к полю логина", login)  # Пользователь
+    write_in("путь к полю пароля", password)  # Пароль
+    click_("путь к \"войти\"")
+    driver.implicitly_wait(10)
