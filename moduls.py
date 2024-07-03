@@ -27,7 +27,9 @@ def check_success(what_search, where_search):
 
 
 def authorisation(login, password):
-    write_in("путь к полю логина", login)  # Пользователь
-    write_in("путь к полю пароля", password)  # Пароль
-    click_("путь к \"войти\"")
+    driver.switch_to.window(driver.window_handles[-1])
+    write_in('/html/body/div/div[2]/div/div/div[1]/div[1]/form/div[1]/input', login)  # Пользователь
+    write_in('/html/body/div/div[2]/div/div/div[1]/div[1]/form/div[2]/input', password)  # Пароль
+    click_('/html/body/div/div[2]/div/div/div[1]/div[1]/form/div[4]/input[2]')
     driver.implicitly_wait(10)
+
