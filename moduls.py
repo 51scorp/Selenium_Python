@@ -29,5 +29,5 @@ def check_success(what_search):
 
 
 def authorisation(login, password):
-    write_in('тут будет путь к полю пользователя', login)  # Пользователь
-    write_in('тут будет путь к полю пароля', password)  # Пароль
+    write_in('//*[@id="email"]', login)  # Пользователь
+    write_in('//*[@id="current-password"]', password)  # Пароль
