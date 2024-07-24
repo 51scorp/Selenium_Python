@@ -1,10 +1,11 @@
 import time
 import math
 from selenium import webdriver
-from data import *
+# from data import *
 
 driver = webdriver.Chrome()
 from moduls import *
+
 
 
 def test_scenario():
