@@ -25,6 +25,6 @@ def test_add_to_cart():
     click_('/html/body/div[1]/div/div[2]/div[2]/div/header/div[1]'
            '/div/div/noindex[2]/nav/ul/li[4]/div/div/div/a')  # goCart
     time.sleep(2)  # wait download page
-    driver.save_screenshot("./log_screenshots/add_to_cart.png")
+    driver.save_screenshot("./screenshots/add_to_cart.png")
 
     driver.close()
