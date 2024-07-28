@@ -1,3 +1,4 @@
+import time
 from selenium.common.exceptions import NoSuchElementException
 from main import driver
 from selenium.webdriver.common.by import By
@@ -40,20 +41,17 @@ def authorisation(login, password):
 
 
 def clear_cart():
-    driver.find_element(By.XPATH,
-                        '/html/body/div[1]/div/div[2]/div[2]/div/header/div[1]/div/div/noindex[2]/nav/ul/li['
-                        '4]/div/div/div/a').click()  # goCart
-    driver.implicitly_wait(5)
+    click_('/html/body/div[1]/div/div[2]/div[2]/div/header/div[1]/div/div/noindex[2]/nav/ul/li['
+           '4]/div/div/div/a')  # goCart
+    driver.refresh()
     try:
-        driver.find_element(By.XPATH,
-                            '/html/body/div[1]/div/div[3]/div/div/div/div/main/div[2]/div/div[2]/div['
-                            '1]/div/div/div/ul/li/div/div/div/div[1]/div/div/div/div[2]/div[2]').click()  # clear Cart
-        driver.implicitly_wait(5)
-        driver.find_element(By.XPATH,
-                            '/html/body/div[1]/div/div[3]/div/div/div/div/main/div[2]/div/div[2]/div[1]/div/div/div/ul/'
-                            'li/div/div/div/div[1]/div/div/div/div[2]/div[2]/div[2]/div[2]'
-                            '/div/div[2]/button[2]').click()  # confirm clear
-        driver.implicitly_wait(5)
+        click_('/html/body/div[1]/div/div[3]/div/div/div/div/main/div[2]/div/div[2]/div['
+               '1]/div/div/div/ul/li/div/div/div/div[1]/div/div/div/div[2]/div[2]')  # clear Cart
+        time.sleep(1)
+        click_('/html/body/div[1]/div/div[3]/div/div/div/div/main/div[2]/div/div[2]/div[1]/div/div/div/ul/'
+               'li/div/div/div/div[1]/div/div/div/div[2]/div[2]/div[2]/div[2]'
+               '/div/div[2]/button[2]')  # confirm clear
+        time.sleep(1)
     except NoSuchElementException:
         pass
     finally:
