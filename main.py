@@ -24,7 +24,7 @@ def test_add_to_cart():
     click_first_match('_1TRiI')  # add to cart first product found
     click_('/html/body/div[1]/div/div[2]/div[2]/div/header/div[1]'
            '/div/div/noindex[2]/nav/ul/li[4]/div/div/div/a')  # goCart
-    time.sleep(2)  # wait download page
+    time.sleep(5)  # wait download page
     driver.save_screenshot("./screenshots/add_to_cart.png")
 
     driver.close()

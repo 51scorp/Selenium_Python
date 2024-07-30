@@ -1,4 +1,3 @@
-import time
 from selenium.common.exceptions import NoSuchElementException
 from main import driver
 from selenium.webdriver.common.by import By
@@ -47,11 +46,9 @@ def clear_cart():
     try:
         click_('/html/body/div[1]/div/div[3]/div/div/div/div/main/div[2]/div/div[2]/div['
                '1]/div/div/div/ul/li/div/div/div/div[1]/div/div/div/div[2]/div[2]')  # clear Cart
-        time.sleep(1)
         click_('/html/body/div[1]/div/div[3]/div/div/div/div/main/div[2]/div/div[2]/div[1]/div/div/div/ul/'
                'li/div/div/div/div[1]/div/div/div/div[2]/div[2]/div[2]/div[2]'
                '/div/div[2]/button[2]')  # confirm clear
-        time.sleep(1)
     except NoSuchElementException:
         pass
     finally:
