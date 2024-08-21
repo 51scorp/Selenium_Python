@@ -9,6 +9,8 @@ from moduls import *
 
 def test_scenario():
     connect(url)  # connect to the site
+    driver.execute_script("document.querySelector('flt-glass-pane').shadowRoot.querySelector("
+                          "'flt-semantics-placeholder').click();")
     click_('/html/body/div/div/div[2]/div[2]/section/div[2]/button') # click authorisation
     click_('/html/body/div/div/div[2]/div[2]/section/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[4]/button[1]')
     authorisation(test_login, test_password)
