@@ -1,9 +1,8 @@
 from selenium.common.exceptions import NoSuchElementException
-from main import driver
 from selenium.webdriver.common.by import By
 
 
-def connect(url):
+def connect(url, driver):
     driver.get(url)
     driver.maximize_window()  # maximize the window
     driver.implicitly_wait(10)

@@ -1,11 +1,10 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from data import *
 
 
 @pytest.fixture(scope="function", autouse=True)
-def browser():
+def driver():
     print("\nstart browser for test..")
     options = webdriver.ChromeOptions()
     options.add_argument("--no-first-run")
