@@ -6,6 +6,17 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from data import *
 
+list_sites = [
+    "https://stepik.org/lesson/236895/step/1",
+    "https://stepik.org/lesson/236896/step/1",
+    "https://stepik.org/lesson/236897/step/1",
+    "https://stepik.org/lesson/236898/step/1",
+    "https://stepik.org/lesson/236899/step/1",
+    "https://stepik.org/lesson/236903/step/1",
+    "https://stepik.org/lesson/236904/step/1",
+    "https://stepik.org/lesson/236905/step/1",
+]
+
 
 @pytest.fixture(scope="function")
 def driver():
@@ -40,4 +51,3 @@ def test_guest_should_see_login_link(driver, version):
     input_field.send_keys(str(answer))
     driver.find_element(By.CLASS_NAME, 'submit-submission').click()
     # time.sleep(2)
-
