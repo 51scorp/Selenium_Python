@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
-from main import driver
+from test_main import driver
 from selenium.webdriver.common.by import By
 
 
